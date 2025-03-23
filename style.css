@@ -24,7 +24,7 @@ h1 {
   color: #d2b4de; */#c39bd3;
   position: sticky;
   left: 0;
-  z-index: 2;
+  z-index: 0;
 }
 
 #below-header {
@@ -295,6 +295,7 @@ td.zero {
   right: 10px;
   font-size: 0.8rem;
   color: #aaa;
+  z-index: 1;
 }
 
 .credit a {
