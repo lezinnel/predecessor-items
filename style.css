@@ -1,0 +1,309 @@
+/* Define color variables */
+:root {
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --primary-background: #1c1c1c;
+  --link-color: #d2b4de; */ was #1e90ff;
+  --button-background: #d2b4de;
+  --button-hover-background: #bbafc0;
+}
+
+/* Use the variables in the styles */
+body {
+  overflow-x: auto;
+  width: fit-content;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: Verdana, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  width: 100vw;
+  text-align: center;
+  color: #d2b4de; */#c39bd3;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+#below-header {
+  width: fit-content;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 90vw;
+  margin-bottom: 10px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+#search-bars {
+  display: flex;
+  width: 100vw;
+  max-width: 800px;
+  border: 2px solid #d2b4de; /* Add a light gray border */
+  border-radius: 10px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.searchBar {
+  padding-left: 10px;
+  flex: 1;
+  width: 85%;
+  min-width: 250px; /* Ensure a minimum width for responsiveness */
+}
+
+.searchBar input {
+  width: 90%;
+  padding-bottom: 10px;
+  flex-direction:column;
+}
+
+#search-box-buttons {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 15%
+}
+
+#search-button, 
+#clear-searches {
+  width: 90%;
+}
+
+#text-filters {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+.textFilter {
+  width = 100%;
+  padding: 10px;
+  border: 2px solid #d2b4de; /* Add a light gray border */
+  border-radius: 8px;      /* Optional: rounded corners */
+  background-color: #2c2c2c; /* Optional: background color */
+  margin-right: 20px; /* Space between Include and Exclude sections */
+}
+
+.textFilter input[type=text] {
+  padding: 10px;
+  width: 90%;
+  height: 5px;
+  margin-bottom: 10px;
+  flex-direction:column;
+}
+
+.textFilter:last-child {
+  margin-right: 0; /* Remove right margin from the last section */
+}
+
+#include-unique-values-container,
+#exclude-unique-values-container {
+  margin-top: 10px; /* Space between the input field and checkboxes */
+  padding: 10px;
+  border: 1px solid #ddd; /* Light border around the checkboxes */
+  border-radius: 5px; /* Optional: rounded corners */
+  background-color: #3a3a3a; /* Optional: background color */
+}
+
+#include-unique-values-container:empty {
+    display: none;
+}
+
+#exclude-unique-values-container:empty {
+    display: none;
+}
+
+label {
+  margin-right: 10px; /* Space between the checkbox and text */
+}
+
+input[type="checkbox"] {
+  margin-right: 5px; /* Space between the checkbox and text */
+}
+
+#filter-container {
+  width: 100vw;
+  margin-bottom: 20px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+}
+
+table, th, td {
+  border: 2px solid #ddd;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Lighter table styles */
+table {
+  background-color: #2c2c2c;  /* Lighter dark background for table */
+  color: #e0e0e0;  /* Light gray text for better readability */
+  border-collapse: collapse;  /* Optional: Makes borders collapse into a single line */
+}
+
+/* Table header */
+th {
+  background-color: #3a3a3a;  /* Slightly lighter background for table header */
+  color: #ffffff;  /* Keep header text white */
+  padding: 10px;  /* Add some padding to header cells */
+  border: 2px solid #444444;  /* Darker border for header */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* Table cells */
+td {
+  background-color: #2c2c2c;  /* Same as table background */
+  padding: 8px;  /* Padding for table cells */
+  border: 2px solid #444444;  /* Light border for cells */
+}
+
+header, footer, main {
+  background-color: var(--primary-background);
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+}
+
+button {
+  background-color: var(--button-background);
+}
+
+button:hover {
+  background-color: var(--button-hover-background);
+}
+
+filter-column {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  width: 100%; /* Ensure it stays full width */
+  */min-width: 600px; /* Adjust as needed */
+}
+
+filter-search {
+  width: 100%;
+}
+
+
+
+.filter-row {
+  margin-bottom: 10px;
+}
+
+.filter-row select, .filter-row input {
+  margin-right: 10px;
+}
+
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+select, input[type="text"] {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+/* Highlight filtered columns */
+th.filtered {
+  font-weight: bold;
+  background-color: #d2b4de; /* Light purple highlight */
+}
+
+/* Move filtered columns to the left (after the 5th column) */
+table th, table td {
+  transition: all 0.3s ease-in-out;
+}
+
+th.filtered, td.filtered {
+  order: -1; /* Moves filtered columns to the left */
+}
+
+th.ability-col {
+  min-width: 150px;
+}
+
+/* Emphasize non-zero numerical values */
+td.numeric-highlight {
+  font-weight: 600;
+  color: #c39bd3; */#af7ac5; /* Purple color for emphasis */
+}
+
+/* Lighten zero numerical values */
+td.zero {
+  font-weight: 100;
+  color: #737373; */#A9A9A9;
+}
+
+
+/* Dropdown menu style */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 200px; /* Adjust width as needed */
+}
+
+.dropdown-input {
+    width: 50%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    background: white;
+    border: 1px solid #ccc;
+    display: none; /* Hidden by default */
+    z-index: 1000;
+}
+
+.dropdown-option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-option:hover {
+    background-color: #f0f0f0;
+}
+
+.credit {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.credit a {
+  color: #c39bd3; */ #d2b4de; */ was #1e90ff;
+  text-decoration: none;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+

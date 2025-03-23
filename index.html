@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predecessor Items</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+  <h1>Predecessor Items</h1>
+  <div class="credit">
+    <p>Created by <a href="https://github.com/lezinnel" target="_blank">Laura Zinnel</a> | Source code on <a href="https://github.com/lezinnel/predecessor-items" target="_blank">GitHub</a></p>
+  </div>
+
+  <div id="below-header">
+  <section>
+    <section>
+    <div id="search-bars" style="display: flex; flex-wrap: wrap;">
+      <!-- Search Bar -->
+      <div class="searchBar" style="float:left;margin-right:10px;">
+        <label for="search">Item Name:</label>
+        <input type="text" id="search" placeholder="Search by Item Name...">
+      </div>
+
+      <div class="searchBar">
+        <label for="ability-search">Abilities contain:</label>
+        <input type="text" id="ability-search" placeholder="Search Abilities...">
+      </div>
+      <div id="search-box-buttons">
+        <button id="search-button">Search</button>
+        <button id="clear-searches">Clear Searches</button>
+      </div>
+    </div>
+    </section>
+    
+    <br style="clear:both;" />
+    <!-- Filter Menu (Optional: e.g., by category or any column) -->
+    <div id="filter-container">
+      <label for="filter-column">Filter by Column:
+      <label><input type="checkbox" name="filter-options" id="include-stats" checked> Stats</label>
+      <label><input type="checkbox" name="filter-options" id="include-abilities"> Abilities</label></label>
+      <div id="Dropdown" class="dropdown-content">
+        <input type="text" list='filter-column' id="filter-search" placeholder="Select Column...">
+        <datalist id="filter-column"></datalist>
+      </div>
+     
+      <div id="numeric-filters" style="display: none;">
+        <label>Min Value: <input type="number" id="min-value"></label>
+        <label>Max Value: <input type="number" id="max-value"></label>
+        <label>Sort: 
+          <select id="sort-order">
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="text-filters" style="display: none;">
+        <div class = "textFilter" style="float:left;margin-right:10px;"> 
+          <label> Must Include Words: 
+          <label><input type="radio" name="include-type" id="include-any" checked> At least one</label>
+          <label><input type="radio" name="include-type" id="include-all"> All</label>
+            <input type="text" list="include-list" id="include-words"></label>
+            <datalist id="include-list"></datalist>
+            <div id="include-unique-values-container"></div>
+        </div>
+        <div class = "textFilter" style="float:left;">
+          <label>Must Exclude Words: <input type="text" list="exclude-list" id="exclude-words"></label>
+          <datalist id="exclude-list"></datalist>
+          <div id="exclude-unique-values-container"></div>
+        </div>
+      </div>
+  
+  
+      <br style="clear:both;" />
+      <button id="apply-filter">Apply Filter</button>
+      <button id="clear-filters">Clear Filters</button>
+
+     <div id="active-filters">
+        <h3>Active Filters:</h3>
+        <ul id="search-list"></ul>
+        <ul id="filter-list"></ul>
+      </div>
+    </div>
+  </section>
+  
+  <div class="table-wrapper">
+    <!-- Data Table to Display Preview -->
+    <table id="data-table">
+      <thead>
+        <tr>
+          <!-- Column headers will be inserted here dynamically -->
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table data rows will be inserted dynamically -->
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+	
+</body>
+</html>
+
